@@ -8,7 +8,8 @@ public class AdtListImpl implements AdtList{
 	//List als int-Array
 	int[] listArray = new int[0]; 
 	//Error Ausgabe
-	int errorCode = -99999999;
+	int ERRORCODE = -99999999;
+	int ERRORCODE2 = -1;
 	
 	
 	@Override
@@ -65,7 +66,7 @@ public class AdtListImpl implements AdtList{
 				return i+1;
 			}
 		}
-		return errorCode;
+		return ERRORCODE2;
 	}
 	
 	@Override
@@ -73,19 +74,33 @@ public class AdtListImpl implements AdtList{
 		if(listArray.length >= pos){
 			return listArray[pos-1];
 		}
-		return errorCode;
+		return ERRORCODE;
 	}
 	
 	@Override
 	public AdtList concat(AdtList list) {
 		AdtList resultList = Factory.create();
-		int laenge = this.laenge() + list.laenge();
-		for(int i = 1; i <= this.laenge(); i++){
-			resultList.insert(i,this.retrieve(i));
+		if(listArray.length == 0){
+			resultList = this;
+			return resultList;	
+		}else if(list.isEmpty()){
+			resultList = list;
+			return resultList;
+		}else {	
+			//this überführen in resultList
+			for(int i = 1; i <= this.laenge(); i++){
+				resultList.insert(i,this.retrieve(i));
+			}
+			//list anhängen durch insert
+			for(int j = 1; j <= list.laenge(); j++){
+				resultList.insert(j + this.laenge(), list.retrieve(j));	
+			}
+			return resultList;
 		}
-		for(int j = this.laenge()+1; j < laenge; j++){
-			resultList.insert(j, list.retrieve(j-this.laenge()));	
-		}
-		return resultList;
+		
+	}
+	
+	public String toString(){
+		return listArray.toString();
 	}
 }

@@ -6,7 +6,7 @@ import interfaces.AdtStack;
 public class AdtStackImpl implements AdtStack{
 	AdtStackImpl(){};
 	//Errorwert
-	int errorCode = -99999999;
+	int ERRORCODE = -99999999;
 	//Interne Liste auf der gearbeitet wird
 	AdtList listStack = Factory.create();
 	
@@ -28,7 +28,7 @@ public class AdtStackImpl implements AdtStack{
 		if(!listStack.isEmpty()){
 			return listStack.retrieve(1);
 		}
-		return errorCode;
+		return ERRORCODE;
 	}
 
 	@Override

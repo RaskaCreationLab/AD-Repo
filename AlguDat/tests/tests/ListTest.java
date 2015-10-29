@@ -8,12 +8,12 @@ import implementations.Factory;
 import interfaces.AdtList;
 
 public class ListTest {
-	int errorCode = -99999999;
+	int ERRORCODE = -99999999;
+	int ERRORCODE2 = -1;
 	
 	@Test
 	public void testIsEmpty() {
 		AdtList list1 = Factory.create();
-		AdtList list2 = Factory.create();
 		assertEquals(true,list1.isEmpty());
 		list1.insert(1,1);
 		list1.insert(1,1000);
@@ -41,14 +41,6 @@ public class ListTest {
 		list1.delete(1);
 		list1.delete(1);
 		assertEquals(1, list1.laenge());
-		
-		list2.insert(1,50);
-		list2.insert(2,51);
-		list2.insert(3,80);
-		list2.insert(4,10);
-		list2.insert(5,70);
-		AdtList list3 = list1.concat(list2);
-		assertEquals(5, list3.laenge());
 	}
 	
 	@Test
@@ -73,7 +65,7 @@ public class ListTest {
 		list1.insert(3,22);
 		assertEquals(2,list1.find(1000));
 		assertEquals(4,list1.find(21));
-		assertEquals(errorCode,list1.find(23));
+		assertEquals(ERRORCODE2,list1.find(23));
 		list1.delete(5);
 		list1.delete(1);
 		assertEquals(2,list1.find(22));
@@ -89,8 +81,8 @@ public class ListTest {
 		list2.insert(1,1);
 		list2.insert(1,1);
 		assertEquals(1,list2.find(1));
-		assertEquals(errorCode,list2.find(2));
-		assertEquals(errorCode,list2.find(27));
+		assertEquals(ERRORCODE2,list2.find(2));
+		assertEquals(ERRORCODE2,list2.find(27));
 	}
 	
 	@Test
@@ -104,11 +96,25 @@ public class ListTest {
 		list1.insert(1,4);
 		list1.delete(1);
 		assertEquals(1,list1.retrieve(2));
-		assertEquals(errorCode,list1.retrieve(5));
+		assertEquals(ERRORCODE,list1.retrieve(5));
 	}
 	
 	@Test
 	public void testConcat(){
-		
+		AdtList list1 = Factory.create();
+		AdtList list2 = Factory.create();
+		AdtList list3 = Factory.create();
+		//zwei listen
+		list1.insert(1,2);
+		list1.insert(2,3);
+		list1.insert(3,4);
+		list1.insert(4,5);
+		list2.insert(1,6);
+		list2.insert(2,7);
+		//resultatsliste
+		list3 = list1.concat(list2);
+		assertEquals(6,list3.laenge());
+		list3.insert(1, 5);
+		assertEquals(7,list3.laenge());
 	}
 }
