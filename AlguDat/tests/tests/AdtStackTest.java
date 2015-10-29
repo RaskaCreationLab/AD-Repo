@@ -7,7 +7,7 @@ import org.junit.Test;
 import implementations.Factory;
 import interfaces.AdtStack;
 
-public class StackTest {             
+public class AdtStackTest {             
 	int ERRORCODE = -99999999;
 	
 	@Test
