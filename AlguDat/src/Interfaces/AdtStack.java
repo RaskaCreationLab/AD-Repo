@@ -1,4 +1,4 @@
-package Interfaces;
+package interfaces;
 
 public interface AdtStack {              
 	public void push(int elem); 

@@ -1,7 +1,7 @@
-package Implementations;
+package implementations;
 
-import Interfaces.AdtList;
-import Interfaces.AdtStack;
+import interfaces.AdtList;
+import interfaces.AdtStack;
 
 public class Factory {
 	public static AdtList create(){
