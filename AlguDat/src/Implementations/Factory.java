@@ -6,7 +6,7 @@ import interfaces.AdtList;
 import interfaces.AdtStack;
 
 public class Factory {
-	
+
 	public static AdtQueue createQ() {
 		return new AdtQueueImpl();
 	}
