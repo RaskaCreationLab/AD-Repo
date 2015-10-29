@@ -91,10 +91,6 @@ public class ListTest {
 		assertEquals(1,list2.find(1));
 		assertEquals(errorCode,list2.find(2));
 		assertEquals(errorCode,list2.find(27));
-		assertEquals(errorCode,list2.find(27));
-		assertEquals(errorCode,list2.find(8));
-		assertEquals(errorCode,list2.find(7));
-		assertEquals(errorCode,list2.find(6));
 	}
 	
 	@Test
@@ -115,5 +111,4 @@ public class ListTest {
 	public void testConcat(){
 		
 	}
-
 }

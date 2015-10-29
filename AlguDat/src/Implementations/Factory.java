@@ -14,6 +14,7 @@ public class Factory {
 	public static AdtStack createS() {
 		return new AdtStackImpl();
 	}
+
 	public static AdtQueue createQ() {
 		return new AdtQueueImpl();
 	}

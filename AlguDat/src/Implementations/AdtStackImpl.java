@@ -1,32 +1,39 @@
 package implementations;
 
+import interfaces.AdtList;
 import interfaces.AdtStack;
 
 public class AdtStackImpl implements AdtStack{
 	AdtStackImpl(){};
+	//Errorwert
+	int errorCode = -99999999;
+	//Interne Liste auf der gearbeitet wird
+	AdtList listStack = Factory.create();
 	
 	@Override
+	//
 	public void push(int elem) {
-		// TODO Auto-generated method stub
-		
+			listStack.insert(1,elem);	
 	}
 
 	@Override
 	public void pop() {
-		// TODO Auto-generated method stub
-		
+		if(!listStack.isEmpty()){
+			listStack.delete(1);
+		}
 	}
 
 	@Override
 	public int top() {
-		// TODO Auto-generated method stub
-		return 0;
+		if(!listStack.isEmpty()){
+			return listStack.retrieve(1);
+		}
+		return errorCode;
 	}
 
 	@Override
 	public boolean isEmptyS() {
-		// TODO Auto-generated method stub
-		return false;
+		return listStack.isEmpty();
 	}
 
 }
