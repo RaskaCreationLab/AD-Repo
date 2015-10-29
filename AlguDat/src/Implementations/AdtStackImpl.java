@@ -1,13 +1,9 @@
-package Implementations;
+package implementations;
 
-import Interfaces.AdtStack;
+import interfaces.AdtStack;
 
 public class AdtStackImpl implements AdtStack{
-	private AdtStackImpl(){};
-	
-	public static AdtStack valueOf(){
-		new AdtStackImpl();
-	}
+	AdtStackImpl(){};
 	
 	@Override
 	public void push(int elem) {
