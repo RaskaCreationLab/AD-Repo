@@ -1,14 +1,16 @@
-package Implementations;
+package implementations;
 
-import Interfaces.AdtList;
-import Interfaces.AdtStack;
+import interfaces.AdtArray;
+import interfaces.AdtQueue;
 
 public class Factory {
-	public static AdtList create(){
-		return new AdtListImpl();
+	
+	public static AdtQueue createQ() {
+		return new AdtQueueImpl();
 	}
 	
-	public static AdtStack createS(){
-		return new AdtStackImpl();
-	}	
+	public static AdtArray initA() {
+		return new AdtArrayImpl();
+	}
+	
 }

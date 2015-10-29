@@ -1,0 +1,40 @@
+package tests;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import implementations.Factory;
+import interfaces.AdtArray;
+
+public class AdtArrayTest {
+
+	@Test
+	public void testSetA() {
+		AdtArray a = Factory.initA();
+		a.setA(3, 1);
+		assertEquals(1, a.getA(3));
+		a.setA(3, 5);
+		assertEquals(5, a.getA(3));
+	}
+
+	@Test
+	public void testGetA() {
+		AdtArray a = Factory.initA();
+		assertEquals(0, a.getA(0));
+		assertEquals(50, a.getA(0));
+		a.setA(15, 20);
+		assertEquals(20, a.getA(15));
+	}
+
+	@Test
+	public void testLengthA() {
+		AdtArray a = Factory.initA();
+		assertEquals(0, a.lengthA());
+		a.setA(0, 1);
+		assertEquals(1, a.lengthA());
+		a.setA(20,15);
+		assertEquals(21, a.lengthA());
+	}
+
+}
