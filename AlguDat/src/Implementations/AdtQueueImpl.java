@@ -1,6 +1,7 @@
 package implementations;
 
 import interfaces.AdtQueue;
+import interfaces.AdtStack;
 
 public class AdtQueueImpl implements AdtQueue {
 	
@@ -28,7 +29,7 @@ public class AdtQueueImpl implements AdtQueue {
 			}
 		}
 		if(!outStack.isEmptyS()) 
-			pop.outStack();
+			outStack.pop();
 		
 	}
 

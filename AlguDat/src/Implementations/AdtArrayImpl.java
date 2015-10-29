@@ -1,6 +1,7 @@
 package implementations;
 
 import interfaces.AdtArray;
+import interfaces.AdtList;
 
 public class AdtArrayImpl implements AdtArray{
 
@@ -27,8 +28,8 @@ public class AdtArrayImpl implements AdtArray{
 				posOfPos = posList.find(pos);
 			}
 			if(posOfPos == ERRORCODE) {
-				posList.insert(posList.length()+1, pos);
-				elemList.insert(posList.length()+1, elem);
+				posList.insert(posList.laenge()+1, pos);
+				elemList.insert(posList.laenge()+1, elem);
 			} else {
 				elemList.insert(posOfPos, elem);
 			}
