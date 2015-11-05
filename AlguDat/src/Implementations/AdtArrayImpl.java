@@ -24,15 +24,15 @@ public class AdtArrayImpl implements AdtArray{
 	public void setA(int pos, int elem) {
 		if(pos >= 0) {
 			int posOfPos;
-			if(pos > length) {
-				length = pos;
+			if(pos+1 > length) {
+				length = pos+1;
 				posOfPos = ERRORCODE;
 			} else {
 				posOfPos = posList.find(pos);
 			}
 			if(posOfPos == ERRORCODE) {
-				posList.insert(posList.laenge()+1, pos);
-				elemList.insert(posList.laenge()+1, elem);
+				posList.insert(1, pos);
+				elemList.insert(1, elem);
 			} else {
 				elemList.insert(posOfPos, elem);
 			}
@@ -45,7 +45,7 @@ public class AdtArrayImpl implements AdtArray{
 		if(pos >= 0) {
 			int posOfPos;
 			posOfPos = (pos > length) ? ERRORCODE : posList.find(pos);
-			if(posOfPos == ERRORCODE) {
+			if(posOfPos == ERRORCODE || posOfPos == -1) {
 				return 0;
 			} else {
 				return elemList.retrieve(posOfPos);

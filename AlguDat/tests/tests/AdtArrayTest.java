@@ -22,7 +22,7 @@ public class AdtArrayTest {
 	public void testGetA() {
 		AdtArray a = AdtArrayImpl.initA();
 		assertEquals(0, a.getA(0));
-		assertEquals(50, a.getA(0));
+		assertEquals(0, a.getA(50));
 		a.setA(15, 20);
 		assertEquals(20, a.getA(15));
 	}
