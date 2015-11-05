@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import implementations.Factory;
+import implementations.AdtQueueImpl;
 import interfaces.AdtQueue;
 
 public class AdtQueueTest {
@@ -12,7 +12,7 @@ public class AdtQueueTest {
 	private int errorCode = -99999999;
 	@Test
 	public void testQueue() {
-		AdtQueue q = Factory.createQ();
+		AdtQueue q = AdtQueueImpl.createQ();
 		assertEquals(true, q.isEmptyQ());
 		assertEquals(errorCode, q.front());
 		q.enqueue(3);

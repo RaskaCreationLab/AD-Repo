@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import implementations.Factory;
+import implementations.AdtStackImpl;
 import interfaces.AdtStack;
 
 public class AdtStackTest {             
@@ -13,7 +13,7 @@ public class AdtStackTest {
 	@Test
 	public void testPush(){
 		//Push schiebt immer einen Wert auf den Stack
-		AdtStack stack1 = Factory.createS();
+		AdtStack stack1 = AdtStackImpl.createS();
 		assertEquals(true,stack1.isEmptyS());
 		stack1.push(1);
 		assertEquals(false,stack1.isEmptyS());
@@ -34,7 +34,7 @@ public class AdtStackTest {
 	@Test
 	public void testPop(){	
 		//Falls stack leer, verändert der Stack sich durch pop() nicht
-		AdtStack stack1 = Factory.createS();
+		AdtStack stack1 = AdtStackImpl.createS();
 		stack1.pop();
 		assertEquals(true,stack1.isEmptyS());
 		stack1.push(2);
@@ -51,7 +51,7 @@ public class AdtStackTest {
 	@Test
 	public void testTop(){
 		//top() gibt den zuletzt hinzugefügten Wert hinzu
-		AdtStack stack1 = Factory.createS();
+		AdtStack stack1 = AdtStackImpl.createS();
 		stack1.push(1);
 		stack1.push(3);
 		stack1.push(2);
@@ -73,7 +73,7 @@ public class AdtStackTest {
 	@Test
 	public void testIsEmptyS(){
 		//Stack ist zu Anfang empty
-		AdtStack stack1 = Factory.createS();
+		AdtStack stack1 = AdtStackImpl.createS();
 		assertEquals(true,stack1.isEmptyS());
 		stack1.push(1);
 		assertEquals(false,stack1.isEmptyS());

@@ -4,14 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import implementations.Factory;
+import implementations.AdtArrayImpl;
 import interfaces.AdtArray;
 
 public class AdtArrayTest {
 
 	@Test
 	public void testSetA() {
-		AdtArray a = Factory.initA();
+		AdtArray a = AdtArrayImpl.initA();
 		a.setA(3, 1);
 		assertEquals(1, a.getA(3));
 		a.setA(3, 5);
@@ -20,7 +20,7 @@ public class AdtArrayTest {
 
 	@Test
 	public void testGetA() {
-		AdtArray a = Factory.initA();
+		AdtArray a = AdtArrayImpl.initA();
 		assertEquals(0, a.getA(0));
 		assertEquals(50, a.getA(0));
 		a.setA(15, 20);
@@ -29,7 +29,7 @@ public class AdtArrayTest {
 
 	@Test
 	public void testLengthA() {
-		AdtArray a = Factory.initA();
+		AdtArray a = AdtArrayImpl.initA();
 		assertEquals(0, a.lengthA());
 		a.setA(0, 1);
 		assertEquals(1, a.lengthA());

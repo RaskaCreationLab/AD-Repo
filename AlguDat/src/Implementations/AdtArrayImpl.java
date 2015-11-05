@@ -2,19 +2,22 @@ package implementations;
 
 import interfaces.AdtArray;
 import interfaces.AdtList;
+import interfaces.AdtStack;
 
-public class AdtArrayImpl implements AdtArray{
-
+public class AdtArrayImpl implements AdtArray{	
 	AdtList elemList, posList;
 	int ERRORCODE = -99999999;
 	int length;
 	
 	AdtArrayImpl() {
 		length = 0;
-		elemList = Factory.create();
-		posList = Factory.create();
+		elemList = AdtListImpl.create();
+		posList = AdtListImpl.create();
 	}
 	
+	public static AdtArray initA() {
+		return new AdtArrayImpl();
+	}	
 	
 	//setA :: Array x pos x elem -> Array :: (pos, elem)
 	@Override

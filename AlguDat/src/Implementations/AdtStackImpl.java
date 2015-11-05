@@ -4,11 +4,16 @@ import interfaces.AdtList;
 import interfaces.AdtStack;
 
 public class AdtStackImpl implements AdtStack{
-	AdtStackImpl(){};
+	AdtStackImpl(){}
+	
+	public static AdtStack createS() {
+		return new AdtStackImpl();
+	}
+	
 	//Errorwert
 	int ERRORCODE = -99999999;
 	//Interne Liste auf der gearbeitet wird
-	AdtList listStack = Factory.create();
+	AdtList listStack = AdtListImpl.create();
 	
 	@Override
 	//

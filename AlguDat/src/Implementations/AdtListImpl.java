@@ -3,7 +3,11 @@ package implementations;
 import interfaces.AdtList;
 
 public class AdtListImpl implements AdtList{		
-	AdtListImpl(){};
+	AdtListImpl(){}
+	
+	public static AdtList create() {
+		return new AdtListImpl();
+	}
 	
 	//List als int-Array
 	int[] listArray = new int[0]; 
@@ -79,7 +83,7 @@ public class AdtListImpl implements AdtList{
 	
 	@Override
 	public AdtList concat(AdtList list) {
-		AdtList resultList = Factory.create();
+		AdtList resultList = AdtListImpl.create();
 		if(listArray.length == 0){
 			resultList = this;
 			return resultList;	
