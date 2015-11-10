@@ -1,7 +1,7 @@
-package implementations;
+package Implementations;
 
-import interfaces.AdtQueue;
-import interfaces.AdtStack;
+import Interfaces.AdtQueue;
+import Interfaces.AdtStack;
 
 public class AdtQueueImpl implements AdtQueue {
 	AdtStack inStack, outStack;

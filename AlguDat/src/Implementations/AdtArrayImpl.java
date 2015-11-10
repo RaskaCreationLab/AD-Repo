@@ -1,8 +1,7 @@
-package implementations;
+package Implementations;
 
-import interfaces.AdtArray;
-import interfaces.AdtList;
-import interfaces.AdtStack;
+import Interfaces.AdtArray;
+import Interfaces.AdtList;
 
 public class AdtArrayImpl implements AdtArray{	
 	AdtList elemList, posList;

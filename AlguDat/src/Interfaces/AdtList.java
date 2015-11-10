@@ -1,4 +1,4 @@
-package interfaces;
+package Interfaces;
 
 public interface AdtList {               
 	public boolean isEmpty();

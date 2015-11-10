@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import implementations.AdtListImpl;
-import interfaces.AdtList;
+import Implementations.AdtListImpl;
+import Interfaces.AdtList;
 
 public class AdtListTest {
 	int ERRORCODE = -99999999;
@@ -26,7 +26,6 @@ public class AdtListTest {
 	@Test
 	public void testLaenge(){
 		AdtList list1 = AdtListImpl.create();
-		AdtList list2 = AdtListImpl.create();
 		list1.insert(1,1);
 		list1.insert(1,1000);
 		assertEquals(2,list1.laenge());
