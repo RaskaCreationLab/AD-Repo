@@ -26,7 +26,6 @@ public class AdtListTest {
 	@Test
 	public void testLaenge(){
 		AdtList list1 = AdtListImpl.create();
-		AdtList list2 = AdtListImpl.create();
 		list1.insert(1,1);
 		list1.insert(1,1000);
 		assertEquals(2,list1.laenge());

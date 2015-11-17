@@ -37,7 +37,7 @@ public class AdtQueueImpl implements AdtQueue {
 				outStack.push(inStack.top());
 				inStack.pop();
 			}
-		}
+		} //if outstack is empty, restack instack into outstack
 	}
 
 	//front :: Queue -> elem 

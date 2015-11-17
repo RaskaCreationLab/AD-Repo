@@ -30,10 +30,7 @@ public class AdtListImpl implements AdtList{
 	@Override
 	public void insert(int pos, int elem){
 		int[] resultList = new int[listArray.length+1];
-		if(listArray.length == 0){
-			resultList[pos-1] = elem;
-			listArray = resultList;
-		}else if(resultList.length >= pos && pos > 0){	
+		if(resultList.length >= pos && pos > 0){	
 			//Alles vor dem zu verrückenden Teil füllen mit der alten Liste
 			for(int j = 0; j < pos-1; j++){
 				resultList[j] = listArray[j];
@@ -75,7 +72,7 @@ public class AdtListImpl implements AdtList{
 	
 	@Override
 	public int retrieve(int pos) {
-		if(listArray.length >= pos){
+		if(laenge() >= pos && pos > 0){
 			return listArray[pos-1];
 		}
 		return ERRORCODE;
@@ -85,10 +82,10 @@ public class AdtListImpl implements AdtList{
 	public AdtList concat(AdtList list) {
 		AdtList resultList = AdtListImpl.create();
 		if(listArray.length == 0){
-			resultList = this;
+			resultList = list;
 			return resultList;	
 		}else if(list.isEmpty()){
-			resultList = list;
+			resultList = this;
 			return resultList;
 		}else {	
 			//this überführen in resultList
