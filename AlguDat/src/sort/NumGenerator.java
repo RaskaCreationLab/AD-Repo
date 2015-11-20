@@ -19,7 +19,7 @@ public class NumGenerator {
 			FileWriter fw = new FileWriter(filename+".dat");
 			BufferedWriter bw = new BufferedWriter(fw);
 			Random rnd = new Random(System.currentTimeMillis());
-			for (int i = 0; i > quantity; i++) {
+			for (int i = 0; i < quantity; i++) {
 				bw.write(rnd.nextInt(quantity)+" ");
 			}
 
@@ -53,11 +53,24 @@ public class NumGenerator {
 			int index = 0;
 			while(scanner.hasNextInt()) {
 				array.setA(index, scanner.nextInt());
+				index++;
 			}
 		} catch (IOException e) { 
 			e.printStackTrace();
 			return null;
 		}
 		return array;
+	}
+	
+	public static void main(String[] args) {
+		//main nur zum testen:
+		sortNum("hello", 100);
+		AdtArray a = readNum("hello");
+		for (int i = 0; i < a.lengthA(); i++) {
+			System.out.print(a.getA(i)+" ");
+			if(i % 10 == 9) 
+				System.out.println("");
+		}
+		
 	}
 }
