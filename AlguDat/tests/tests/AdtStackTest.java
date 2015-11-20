@@ -4,14 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-<<<<<<< HEAD
 import adt.implementations.*;
 import adt.Interfaces.*;
-=======
-import Implementations.AdtStackImpl;
-import Interfaces.AdtStack;
->>>>>>> refs/remotes/origin/master
-
 public class AdtStackTest {             
 	int ERRORCODE = -99999999;
 	
@@ -31,14 +25,14 @@ public class AdtStackTest {
 		assertEquals(1,stack1.top());
 		stack1.push(2);
 		assertEquals(2,stack1.top());
-		//Negative Zahlen können gepusht werden
+		//Negative Zahlen kï¿½nnen gepusht werden
 		stack1.push(-20);
 		assertEquals(-20,stack1.top());		
 	}
 	
 	@Test
 	public void testPop(){	
-		//Falls stack leer, verändert der Stack sich durch pop() nicht
+		//Falls stack leer, verï¿½ndert der Stack sich durch pop() nicht
 		AdtStack stack1 = AdtStackImpl.createS();
 		stack1.pop();
 		assertEquals(true,stack1.isEmptyS());
@@ -55,7 +49,7 @@ public class AdtStackTest {
 	
 	@Test
 	public void testTop(){
-		//top() gibt den zuletzt hinzugefügten Wert hinzu
+		//top() gibt den zuletzt hinzugefï¿½gten Wert hinzu
 		AdtStack stack1 = AdtStackImpl.createS();
 		stack1.push(1);
 		stack1.push(3);

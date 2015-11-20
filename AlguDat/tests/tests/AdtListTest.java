@@ -4,13 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-<<<<<<< HEAD
 import adt.implementations.*;
 import adt.Interfaces.*;
-=======
-import Implementations.AdtListImpl;
-import Interfaces.AdtList;
->>>>>>> refs/remotes/origin/master
 
 public class AdtListTest {
 	int ERRORCODE = -99999999;
@@ -50,24 +45,24 @@ public class AdtListTest {
 	@Test
 	public void testInsert(){
 		AdtList list1 = AdtListImpl.create();
-		//Länge ändert sich durch Insertierung in eine leere Liste
+		//Lï¿½nge ï¿½ndert sich durch Insertierung in eine leere Liste
 		list1.insert(1,2);
 		assertEquals(1,list1.laenge());
 		list1.insert(2,4);
 		list1.insert(3,1);
 		assertEquals(3,list1.laenge());
-		//Länge ändert sich nicht bei ungültigen inserts
+		//Lï¿½nge ï¿½ndert sich nicht bei ungï¿½ltigen inserts
 		list1.insert(6,2);
 		list1.insert(0,2);
 		assertEquals(3,list1.laenge());
-		//Länge ändert sich durch insertierungen an schon vergebenen stellen
-		//Ausserdem wird das neu hinzugefügte Element dort gefunden
+		//Lï¿½nge ï¿½ndert sich durch insertierungen an schon vergebenen stellen
+		//Ausserdem wird das neu hinzugefï¿½gte Element dort gefunden
 		list1.insert(1,5);
 		list1.insert(2,6);
 		assertEquals(5,list1.laenge());
 		assertEquals(1,list1.find(5));
 		assertEquals(2,list1.find(6));
-		//Die Werte werden um eins verschoben durch Änderung an vergebener Stelle durch Verschiebung
+		//Die Werte werden um eins verschoben durch ï¿½nderung an vergebener Stelle durch Verschiebung
 		assertEquals(5,list1.find(1));
 		assertEquals(4,list1.find(4));
 	}
@@ -75,16 +70,16 @@ public class AdtListTest {
 	@Test
 	public void testDelete(){
 		AdtList list1 = AdtListImpl.create();
-		//Delete ändert nichts auf leere Liste
+		//Delete ï¿½ndert nichts auf leere Liste
 		list1.delete(1);
 		list1.delete(20);
-		//Ungültige Position ändert nichts an der Länge der Liste
+		//Ungï¿½ltige Position ï¿½ndert nichts an der Lï¿½nge der Liste
 		list1.insert(1,2);
 		list1.insert(2,20);
 		assertEquals(2,list1.laenge());
 		list1.delete(4);
 		assertEquals(2,list1.laenge());
-		//Länge ändert sich durch löschen einer validen Positionsangabe
+		//Lï¿½nge ï¿½ndert sich durch lï¿½schen einer validen Positionsangabe
 		list1.delete(1);
 		assertEquals(1,list1.laenge());
 		//Alle Positionen werden um 1 minimiert
@@ -158,6 +153,6 @@ public class AdtListTest {
 		list3.insert(1, 5);
 		assertEquals(7,list3.laenge());
 		//Eine Liste mit einer leeren Liste ergibt die belegte Liste als neue Liste -> nicht testbar
-		//Zwei leere Listen müssen eine leere Liste ergeben = kann nicht getestet werden da eine neue Liste zurückgegeben wird
+		//Zwei leere Listen mï¿½ssen eine leere Liste ergeben = kann nicht getestet werden da eine neue Liste zurï¿½ckgegeben wird
 	}
 }
