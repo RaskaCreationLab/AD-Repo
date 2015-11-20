@@ -1,6 +1,6 @@
 package sort.algorithms;
 
-import Interfaces.AdtArray;
+import adt.Interfaces.AdtArray;
 
 public class InsertionSort {
 
