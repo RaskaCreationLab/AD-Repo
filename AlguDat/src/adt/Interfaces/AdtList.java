@@ -1,4 +1,8 @@
+<<<<<<< HEAD:AlguDat/src/adt/Interfaces/AdtList.java
+package adt.Interfaces;
+=======
 package Interfaces;
+>>>>>>> refs/remotes/origin/master:AlguDat/src/Interfaces/AdtList.java
 
 public interface AdtList {               
 	public boolean isEmpty();

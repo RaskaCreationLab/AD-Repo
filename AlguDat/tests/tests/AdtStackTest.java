@@ -4,8 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
+import adt.implementations.*;
+import adt.Interfaces.*;
+=======
 import Implementations.AdtStackImpl;
 import Interfaces.AdtStack;
+>>>>>>> refs/remotes/origin/master
 
 public class AdtStackTest {             
 	int ERRORCODE = -99999999;

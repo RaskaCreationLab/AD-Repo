@@ -1,7 +1,13 @@
+<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtArrayImpl.java
+package adt.implementations;
+
+import adt.Interfaces.*;
+=======
 package Implementations;
 
 import Interfaces.AdtArray;
 import Interfaces.AdtList;
+>>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtArrayImpl.java
 
 public class AdtArrayImpl implements AdtArray{	
 	AdtList elemList, posList;
@@ -21,18 +27,22 @@ public class AdtArrayImpl implements AdtArray{
 	//setA :: Array x pos x elem -> Array :: (pos, elem)
 	@Override
 	public void setA(int pos, int elem) {
-		if(pos >= 0) {
+		if(pos >= 0) { //check if pos is valid
 			int posOfPos;
-			if(pos+1 > length) {
+			if(pos+1 > length) { //if pos is higher than length, incease size
 				length = pos+1;
 				posOfPos = ERRORCODE;
 			} else {
 				posOfPos = posList.find(pos);
-			}
+			} //if pos is not set, add entry for pos/elem
 			if(posOfPos == ERRORCODE) {
 				posList.insert(1, pos);
 				elemList.insert(1, elem);
+<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtArrayImpl.java
+			} else { //overwrite pos with elem
+=======
 			} else {
+>>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtArrayImpl.java
 				elemList.delete(posOfPos);
 				elemList.insert(posOfPos, elem);
 			}
@@ -42,17 +52,17 @@ public class AdtArrayImpl implements AdtArray{
 	//setA :: Array x pos -> elem :: (pos)
 	@Override
 	public int getA(int pos) {
-		if(pos >= 0) {
+		if(pos >= 0) { //check if pos is valid
 			int posOfPos;
 			posOfPos = (pos > length) ? ERRORCODE : posList.find(pos);
 			if(posOfPos == ERRORCODE || posOfPos == -1) {
-				return 0;
+				return 0; //if pos is not set return 0;
 			} else {
 				return elemList.retrieve(posOfPos);
-			}
+			} //return elem of pos
 		} else {
-			return ERRORCODE;
-		}
+			return 0;
+		} //return 0 as error value
 	}
 
 	//lengthA :: Array -> int
