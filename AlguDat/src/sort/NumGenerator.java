@@ -15,6 +15,8 @@ public class NumGenerator {
 	private NumGenerator() {}
 	
 	public static void sortNum(String filename, int quantity) {
+		if (quantity <= 0)
+			return;
 		try { 
 			FileWriter fw = new FileWriter(filename+".dat");
 			BufferedWriter bw = new BufferedWriter(fw);
@@ -30,6 +32,8 @@ public class NumGenerator {
 	}
 	
 	public static void sortNum(String filename, int quantity, boolean desc) {
+		if (quantity <= 0)
+			return;
 		try { 
 			FileWriter fw = new FileWriter(filename+".dat");
 			BufferedWriter bw = new BufferedWriter(fw);
