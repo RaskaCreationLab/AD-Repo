@@ -1,12 +1,4 @@
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtListImpl.java
-package adt.implementations;
-
 import adt.Interfaces.*;
-=======
-package Implementations;
-
-import Interfaces.AdtList;
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtListImpl.java
 
 public class AdtListImpl implements AdtList{		
 	AdtListImpl(){}

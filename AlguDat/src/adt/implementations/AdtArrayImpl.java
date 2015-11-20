@@ -1,13 +1,7 @@
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtArrayImpl.java
 package adt.implementations;
 
 import adt.Interfaces.*;
-=======
-package Implementations;
 
-import Interfaces.AdtArray;
-import Interfaces.AdtList;
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtArrayImpl.java
 
 public class AdtArrayImpl implements AdtArray{	
 	AdtList elemList, posList;
