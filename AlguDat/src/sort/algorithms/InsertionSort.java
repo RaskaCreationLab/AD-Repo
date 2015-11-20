@@ -8,7 +8,7 @@ public class InsertionSort {
 	private InsertionSort() {} //verhindere das instanziieren der Klasse
 	
 	public static void insertionSort(AdtArray array, int startIndex, int endIndex) {
-		if (startIndex < endIndex && startIndex >= 0 && endIndex < array.lengthA()-1) { //kontrolliere die sortierbereichgrenzen
+		if (startIndex < endIndex && startIndex >= 0 && endIndex < array.lengthA()) { //kontrolliere die sortierbereichgrenzen
 			for (int sorted = startIndex+1; sorted <= endIndex ; sorted++ ){ //sortiere in den Bereichsgrenzen
 				//startIndex+1, da ein Element immer "sortiert" ist
 				int insertPosition = sorted; //position an der eingefügt werden soll
@@ -47,7 +47,7 @@ public class InsertionSort {
 	public static int[] insertionSortAccessCount(AdtArray array, int startIndex, int endIndex) {
 		int[] accesses = {0,0,0,0};
 		int readAIndex = 0, writeAIndex = 1, readIndex = 2, writeIndex = 3;
-		if (startIndex < endIndex && startIndex >= 0 && endIndex < array.lengthA()-1) {
+		if (startIndex < endIndex && startIndex >= 0 && endIndex < array.lengthA()) {
 			accesses[writeIndex] += 1;
 			accesses[readIndex] += 1;
 			for (int sorted = startIndex+1; sorted <= endIndex ; sorted++ ){ //sortiere in den Bereichsgrenzen
@@ -103,6 +103,8 @@ public class InsertionSort {
 	public static void main(String[] args) {
 		NumGenerator.sortNum("test", 20);
 		AdtArray array = NumGenerator.readNum("test");
-		insertionSort(array, 5, 15);
+		printArray(array);
+		insertionSort(array, 0, array.lengthA()-1);
+		printArray(array);
 	}
 }
