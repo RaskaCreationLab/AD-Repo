@@ -1,4 +1,4 @@
-package interfaces;
+package adt.Interfaces;
 
 public interface AdtArray {
 	

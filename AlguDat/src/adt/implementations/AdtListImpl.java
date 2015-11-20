@@ -1,6 +1,6 @@
-package implementations;
+package adt.implementations;
 
-import interfaces.AdtList;
+import adt.Interfaces.*;
 
 public class AdtListImpl implements AdtList{		
 	AdtListImpl(){}

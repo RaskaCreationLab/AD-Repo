@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import implementations.AdtStackImpl;
-import interfaces.AdtStack;
+import adt.implementations.*;
+import adt.Interfaces.*;
 
 public class AdtStackTest {             
 	int ERRORCODE = -99999999;
