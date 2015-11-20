@@ -1,4 +1,8 @@
+<<<<<<< HEAD:AlguDat/src/adt/Interfaces/AdtArray.java
 package adt.Interfaces;
+=======
+package Interfaces;
+>>>>>>> refs/remotes/origin/master:AlguDat/src/Interfaces/AdtArray.java
 
 public interface AdtArray {
 	

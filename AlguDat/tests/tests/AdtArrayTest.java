@@ -4,8 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
 import adt.implementations.*;
 import adt.Interfaces.*;
+=======
+import Implementations.AdtArrayImpl;
+import Interfaces.AdtArray;
+>>>>>>> refs/remotes/origin/master
 
 public class AdtArrayTest {
 
