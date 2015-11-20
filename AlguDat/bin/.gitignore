@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 /Implementations/
 /Interfaces/
 /tests/
-/test/
-/Implementations2/
+/adt/
+/sort/
+=======
+/Interfaces/
+/Implementations/
+/tests/
+>>>>>>> refs/remotes/origin/master

@@ -4,8 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
+import adt.implementations.*;
+import adt.Interfaces.*;
+=======
 import Implementations.AdtListImpl;
 import Interfaces.AdtList;
+>>>>>>> refs/remotes/origin/master
 
 public class AdtListTest {
 	int ERRORCODE = -99999999;

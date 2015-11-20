@@ -4,8 +4,13 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
+import adt.implementations.*;
+import adt.Interfaces.*;
+=======
 import Implementations.AdtQueueImpl;
 import Interfaces.AdtQueue;
+>>>>>>> refs/remotes/origin/master
 
 public class AdtQueueTest {
 

@@ -1,7 +1,13 @@
+<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtQueueImpl.java
+package adt.implementations;
+
+import adt.Interfaces.*;
+=======
 package Implementations;
 
 import Interfaces.AdtQueue;
 import Interfaces.AdtStack;
+>>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtQueueImpl.java
 
 public class AdtQueueImpl implements AdtQueue {
 	AdtStack inStack, outStack;
@@ -37,7 +43,7 @@ public class AdtQueueImpl implements AdtQueue {
 				outStack.push(inStack.top());
 				inStack.pop();
 			}
-		}
+		} //if outstack is empty, restack instack into outstack
 	}
 
 	//front :: Queue -> elem 
