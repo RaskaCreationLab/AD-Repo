@@ -36,9 +36,21 @@ public class QuickSortTest {
 		result.setA(7,8);
 		result.setA(8,9);
 		result.setA(9,10);
-		
-		QuickSort.quickSort(array);
-		assertEquals(result,array);
-	}
 
+		QuickSort.quickSort(array);
+		assertEquals(true,compare(array,result));
+		
+		array.setA(10, );
+	}
+	
+	public boolean compare(AdtArray ar1, AdtArray ar2){
+		if(ar1.lengthA() == ar2.lengthA()){
+			for(int i = 0; i < ar1.lengthA(); i++){
+				if( ar1.getA(i) != ar2.getA(i))return false;
+			}
+		} else {
+			return false;
+		}
+		return true;
+	}
 }

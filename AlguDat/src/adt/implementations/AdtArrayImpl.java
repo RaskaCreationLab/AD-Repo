@@ -59,5 +59,4 @@ public class AdtArrayImpl implements AdtArray{
 	public int lengthA() {
 		return length;
 	}
-
 }
