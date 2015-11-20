@@ -10,43 +10,33 @@ public class QuickSort {
 //		if(arrayToSort.lengthA() <= 12){
 //			return InsertionsSort.sort(arrayToSort);
 //		} else{
-				int l = 1;
-				int r = (arrayToSort.lengthA()-1);
+				int l = 0;
+				int r = arrayToSort.lengthA()-1;
 				quickSortRec(arrayToSort,l,r);
 //		}
 	}
 	
-	private static void quickSortRec(AdtArray arrayToSort, int l, int r){
-//		if(arrayToSort.lengthA() <= 12){
-//			InsertionsSort.insertionSort();
-//		}
-		if(l < r){
-			int i = l;
-			int j = r-1;
-			int pivot = arrayToSort.getA(r);
-			while(true){
-				while(arrayToSort.getA(i) < pivot){
-					i++;
-				} 
-				while(arrayToSort.getA(j) >= pivot){
-					if(j <= 0){
-						break;
-					} else {
-						j--;
-					}
-				}
-				if(i>=j)break;
-				swap(arrayToSort,i,j);
+	public static void quickSortRec(AdtArray arrayToSort,int l, int r){
+		int i = l;
+		int j = r;
+		
+		if(r >= l){  //r - l >= 1
+			int pivot = arrayToSort.getA(l);
+			
+			while(j > i){
+				while(arrayToSort.getA(i) <= pivot && i <= r && j > i)i++;
+				while(arrayToSort.getA(j) > pivot && j >= l && j >= i)j--;
+				if(j > i){swap(arrayToSort,i,j);}
 			}
-			swap(arrayToSort,i,r);
-			quickSortRec(arrayToSort,l,i--);
-			quickSortRec(arrayToSort,i++,r);
+			swap(arrayToSort,l,j);
+			quickSortRec(arrayToSort,l,j-1);
+			quickSortRec(arrayToSort,j+1,r);
 		}
 	}
-	
+
 	public static void swap(AdtArray arrayToSort,int i, int j){
 		int tmp = arrayToSort.getA(i);
-		arrayToSort.setA(i,j);
+		arrayToSort.setA(i,arrayToSort.getA(j));
 		arrayToSort.setA(j,tmp);
 	}
 }
