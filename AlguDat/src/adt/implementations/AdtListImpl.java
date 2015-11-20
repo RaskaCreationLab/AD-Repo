@@ -1,12 +1,8 @@
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtListImpl.java
+
 package adt.implementations;
 
 import adt.Interfaces.*;
-=======
-package Implementations;
 
-import Interfaces.AdtList;
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtListImpl.java
 
 public class AdtListImpl implements AdtList{		
 	AdtListImpl(){}
@@ -37,12 +33,12 @@ public class AdtListImpl implements AdtList{
 	public void insert(int pos, int elem){
 		int[] resultList = new int[listArray.length+1];
 		if(resultList.length >= pos && pos > 0){	
-			//Alles vor dem zu verrückenden Teil füllen mit der alten Liste
+			//Alles vor dem zu verrï¿½ckenden Teil fï¿½llen mit der alten Liste
 			for(int j = 0; j < pos-1; j++){
 				resultList[j] = listArray[j];
 			}
 			resultList[pos-1] = elem;
-			//Verrücken
+			//Verrï¿½cken
 			for(int i = pos; i < resultList.length; i++){
 				resultList[i] = listArray[i-1]; 
 			}
@@ -54,11 +50,11 @@ public class AdtListImpl implements AdtList{
 	public void delete(int pos) {
 		if(listArray.length >= pos && pos > 0){	
 			int[] resultList = new int[listArray.length-1];
-			//Alles vor dem zu verrückenden Teil füllen mit der alten Liste
+			//Alles vor dem zu verrï¿½ckenden Teil fï¿½llen mit der alten Liste
 			for(int j = 0; j < pos-1; j++){
 				resultList[j] = listArray[j];
 			}
-			//Verrücken
+			//Verrï¿½cken
 			for(int i = pos; i < listArray.length; i++){
 				resultList[i-1] = listArray[i]; 
 			}
@@ -94,11 +90,11 @@ public class AdtListImpl implements AdtList{
 			resultList = this;
 			return resultList;
 		}else {	
-			//this überführen in resultList
+			//this ï¿½berfï¿½hren in resultList
 			for(int i = 1; i <= this.laenge(); i++){
 				resultList.insert(i,this.retrieve(i));
 			}
-			//list anhängen durch insert
+			//list anhï¿½ngen durch insert
 			for(int j = 1; j <= list.laenge(); j++){
 				resultList.insert(j + this.laenge(), list.retrieve(j));	
 			}

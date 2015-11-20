@@ -1,4 +1,4 @@
-package Implementations;
+package sort.algorithms;
 
 import Interfaces.AdtArray;
 

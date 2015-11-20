@@ -1,13 +1,6 @@
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtStackImpl.java
 package adt.implementations;
 
 import adt.Interfaces.*;
-=======
-package Implementations;
-
-import Interfaces.AdtList;
-import Interfaces.AdtStack;
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtStackImpl.java
 
 public class AdtStackImpl implements AdtStack{
 	AdtStackImpl(){}

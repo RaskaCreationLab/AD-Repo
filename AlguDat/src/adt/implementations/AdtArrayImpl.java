@@ -1,13 +1,6 @@
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtArrayImpl.java
 package adt.implementations;
 
 import adt.Interfaces.*;
-=======
-package Implementations;
-
-import Interfaces.AdtArray;
-import Interfaces.AdtList;
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtArrayImpl.java
 
 public class AdtArrayImpl implements AdtArray{	
 	AdtList elemList, posList;
@@ -38,11 +31,7 @@ public class AdtArrayImpl implements AdtArray{
 			if(posOfPos == ERRORCODE) {
 				posList.insert(1, pos);
 				elemList.insert(1, elem);
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtArrayImpl.java
 			} else { //overwrite pos with elem
-=======
-			} else {
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtArrayImpl.java
 				elemList.delete(posOfPos);
 				elemList.insert(posOfPos, elem);
 			}
