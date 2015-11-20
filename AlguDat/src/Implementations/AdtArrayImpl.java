@@ -33,6 +33,7 @@ public class AdtArrayImpl implements AdtArray{
 				posList.insert(1, pos);
 				elemList.insert(1, elem);
 			} else {
+				elemList.delete(posOfPos);
 				elemList.insert(posOfPos, elem);
 			}
 		}
