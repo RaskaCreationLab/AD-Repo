@@ -32,11 +32,7 @@ public class AdtArrayImpl implements AdtArray{
 			if(posOfPos == ERRORCODE) {
 				posList.insert(1, pos);
 				elemList.insert(1, elem);
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtArrayImpl.java
 			} else { //overwrite pos with elem
-=======
-			} else {
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtArrayImpl.java
 				elemList.delete(posOfPos);
 				elemList.insert(posOfPos, elem);
 			}

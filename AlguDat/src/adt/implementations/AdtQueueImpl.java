@@ -1,13 +1,6 @@
-<<<<<<< HEAD:AlguDat/src/adt/implementations/AdtQueueImpl.java
 package adt.implementations;
 
 import adt.Interfaces.*;
-=======
-package Implementations;
-
-import Interfaces.AdtQueue;
-import Interfaces.AdtStack;
->>>>>>> refs/remotes/origin/master:AlguDat/src/Implementations/AdtQueueImpl.java
 
 public class AdtQueueImpl implements AdtQueue {
 	AdtStack inStack, outStack;
