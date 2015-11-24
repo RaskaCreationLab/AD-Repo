@@ -5,6 +5,7 @@ import adt.Interfaces.*;
 public class AdtArrayImpl implements AdtArray{	
 	AdtList elemList, posList;
 	int ERRORCODE = -99999999;
+	int ERRORCODE2 = -1;
 	int length;
 	
 	AdtArrayImpl() {
@@ -28,7 +29,7 @@ public class AdtArrayImpl implements AdtArray{
 			} else {
 				posOfPos = posList.find(pos);
 			} //if pos is not set, add entry for pos/elem
-			if(posOfPos == ERRORCODE) {
+			if(posOfPos == ERRORCODE || posOfPos == ERRORCODE2) {
 				posList.insert(1, pos);
 				elemList.insert(1, elem);
 			} else { //overwrite pos with elem
