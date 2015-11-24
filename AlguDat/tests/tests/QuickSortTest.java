@@ -40,7 +40,6 @@ public class QuickSortTest {
 		QuickSort.quickSort(array);
 		assertEquals(true,compare(array,result));
 		
-		array.setA(10, );
 	}
 	
 	public boolean compare(AdtArray ar1, AdtArray ar2){
