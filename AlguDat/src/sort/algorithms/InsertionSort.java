@@ -7,6 +7,8 @@ public class InsertionSort {
 
 	private InsertionSort() {} //verhindere das instanziieren der Klasse
 	
+	//InsertionSort :: AdtArray x int x int -> AdtArray :: (array, startIndex, endIndex) ::::
+	// sort all elements of AdtArray in between startIndex and endIndex. sorting ascending.
 	public static void insertionSort(AdtArray array, int startIndex, int endIndex) {
 		if (startIndex < endIndex && startIndex >= 0 && endIndex < array.lengthA()) { //kontrolliere die sortierbereichgrenzen
 			for (int sorted = startIndex+1; sorted <= endIndex ; sorted++ ){ //sortiere in den Bereichsgrenzen
@@ -101,8 +103,8 @@ public class InsertionSort {
 	}
 	
 	public static void main(String[] args) {
-		NumGenerator.sortNum("test", 20);
-		AdtArray array = NumGenerator.readNum("test");
+		AdtArray array = NumGenerator.readNum("zahlen");
+		System.out.println(""+array.lengthA());
 		printArray(array);
 		insertionSort(array, 0, array.lengthA()-1);
 		printArray(array);
