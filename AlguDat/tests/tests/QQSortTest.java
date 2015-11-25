@@ -4,25 +4,26 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import adt.implementations.*;
-import adt.Interfaces.*;
+import adt.Interfaces.AdtArray;
+import adt.implementations.AdtArrayImpl;
 import sort.MethodPivot;
 import sort.NumGenerator;
-import sort.algorithms.*;
+import sort.algorithms.QQSort;
+import sort.algorithms.QuickSort;
 
-public class QuickSortTest {
+public class QQSortTest {
 
 	@Test
-	public void sortTest() {
+	public void test() {
 		AdtArray array1 = AdtArrayImpl.initA();
 		AdtArray result1 = AdtArrayImpl.initA();
 
 		AdtArray array2 = AdtArrayImpl.initA();
 		AdtArray result2 = AdtArrayImpl.initA();
-
-		AdtArray array3 = AdtArrayImpl.initA();
-		AdtArray result3 = AdtArrayImpl.initA();
 		
+		AdtArray result3 = AdtArrayImpl.initA();
+		AdtArray array3 = NumGenerator.readNum("test");
+
 		array1.setA(0,5);
 		array1.setA(1,3);
 		array1.setA(2,6);
@@ -46,10 +47,9 @@ public class QuickSortTest {
 		result1.setA(9,10);
 		
 //		Weitergabe an Insertionsort
-		QuickSort.quickSort(array1,MethodPivot.LEFT);		
+		QQSort.quickSort(array1,MethodPivot.LEFT);	
 		assertEquals(true,compare(array1,result1));
 		
-		//Mit länger als 12 Zeichen
 		array2.setA(0,5);
 		array2.setA(1,11);
 		array2.setA(2,6);
@@ -83,28 +83,8 @@ public class QuickSortTest {
 		result2.setA(13,14);
 		result2.setA(14,15);
 		result2.setA(15,16);
-
-		QuickSort.quickSort(array2,MethodPivot.LEFT);
-		assertEquals(true,compare(array2,result2));
 		
-		array2.setA(0,5);
-		array2.setA(1,11);
-		array2.setA(2,6);
-		array2.setA(3,8);
-		array2.setA(4,14);
-		array2.setA(5,2);
-		array2.setA(6,15);
-		array2.setA(7,16);
-		array2.setA(8,10);
-		array2.setA(9,13);
-		array2.setA(10,1);
-		array2.setA(11,12);
-		array2.setA(12,3);
-		array2.setA(13,7);
-		array2.setA(14,9);
-		array2.setA(15,4);
-		
-		QuickSort.quickSort(array2,MethodPivot.RIGHT);
+		QQSort.quickSort(array2,MethodPivot.RIGHT);
 		assertEquals(true,compare(array2,result2)); 
 		
 		array2.setA(0,5);
@@ -124,7 +104,7 @@ public class QuickSortTest {
 		array2.setA(14,9);
 		array2.setA(15,4);
 		
-		QuickSort.quickSort(array2,MethodPivot.RANDOM);
+		QQSort.quickSort(array2,MethodPivot.RANDOM);
 		assertEquals(true,compare(array2,result2));
 		
 		array2.setA(0,5);
@@ -144,8 +124,36 @@ public class QuickSortTest {
 		array2.setA(14,9);
 		array2.setA(15,4);
 		
-		QuickSort.quickSort(array2,MethodPivot.MEDIANOF3);
+		QQSort.quickSort(array2,MethodPivot.MEDIANOF3);
 		assertEquals(true,compare(array2,result2));
+		
+		//IMPORT-FUNCTIONALITY
+		QQSort.quickSort(array3,MethodPivot.LEFT);
+		array3 = NumGenerator.readNum("test");
+		QQSort.quickSort(array3,MethodPivot.RIGHT);
+		array3 = NumGenerator.readNum("test");
+		QQSort.quickSort(array3,MethodPivot.RANDOM);
+		array3 = NumGenerator.readNum("test");
+		QQSort.quickSort(array3,MethodPivot.MEDIANOF3);
+		
+		//ACCESSES
+		array3 = NumGenerator.readNum("test");	
+		System.out.println((QQSort.quickSortRuntime(array3,MethodPivot.LEFT)));
+		array3 = NumGenerator.readNum("test");
+		System.out.println((QQSort.quickSortRuntime(array3,MethodPivot.RIGHT)));
+		array3 = NumGenerator.readNum("test");
+		System.out.println((QQSort.quickSortRuntime(array3,MethodPivot.RANDOM)));
+		array3 = NumGenerator.readNum("test");
+		System.out.println((QQSort.quickSortRuntime(array3,MethodPivot.MEDIANOF3)));
+		
+		array3 = NumGenerator.readNum("zahlen");
+		System.out.println(("zahlen runtime"+QQSort.quickSortRuntime(array3,MethodPivot.MEDIANOF3)));
+		array3 = NumGenerator.readNum("zahlen");
+		int[] count = QQSort.quickSortAccessCount(array3,MethodPivot.MEDIANOF3);
+		System.out.println(count[0]+" adt lese");
+		System.out.println(count[1]+" adt schreibe");
+		System.out.println(count[2]+" lese insgesamt");
+		System.out.println(count[3]+" schreibe insgesamt");
 		
 		result3.setA(0,0);
 		result3.setA(1,0);
@@ -179,9 +187,20 @@ public class QuickSortTest {
 		assertEquals(true,compare(array2,result2));
 		array3 = NumGenerator.readNum("test");
 		QuickSort.quickSort(array3,MethodPivot.MEDIANOF3);
-		assertEquals(true,compare(array2,result2));
+		assertEquals(true,compare(array2,result2));	
+		
+		array3 = NumGenerator.readNum("zahlen");	
+		count = QQSort.quickSortAccessCount(array3,MethodPivot.LEFT);
+		System.out.println(count[2]+" lese insgesamt");
+		System.out.println(count[3]+" schreibe insgesamt");
+//		array3 = NumGenerator.readNum("zahlen");
+//		System.out.println((QQSort.quickSortAccessCount(array3,MethodPivot.RIGHT)));
+//		array3 = NumGenerator.readNum("zahlen");
+//		System.out.println((QQSort.quickSortAccessCount(array3,MethodPivot.RANDOM)));
+//		array3 = NumGenerator.readNum("zahlen");
+//		System.out.println((QQSort.quickSortAccessCount(array3,MethodPivot.MEDIANOF3)));
 	}
-	
+
 	public boolean compare(AdtArray ar1, AdtArray ar2){
 		if(ar1.lengthA() == ar2.lengthA()){
 			for(int i = 0; i < ar1.lengthA(); i++){
