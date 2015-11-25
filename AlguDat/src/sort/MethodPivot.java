@@ -1,5 +1,5 @@
 package sort;
 
-public enum MethodPivot {
-
+public enum MethodPivot{
+	LEFT, RIGHT, RANDOM, MEDIANOF3;
 }
